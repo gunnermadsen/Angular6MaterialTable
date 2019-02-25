@@ -1,16 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule }                      from '@angular/platform-browser';
+import { NgModule }                           from '@angular/core';
+import { CdkTableModule }                     from '@angular/cdk/table';
+import { HttpClientModule }                   from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { HttpModule }                         from '@angular/http';
+import { BrowserAnimationsModule }            from '@angular/platform-browser/animations';
+import { MaterialModule }                     from './material.module';
+import { UserTableComponent }                 from './app.component';
+import { UserService }                        from './user.service';
 
-import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpModule,
+    HttpClientModule,
+    MaterialModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [UserTableComponent],
+  declarations: [UserTableComponent],
+  bootstrap: [UserTableComponent],
+  providers: [UserService]
 })
 export class AppModule { }
